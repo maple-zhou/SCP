@@ -116,7 +116,7 @@
     }
 
     .expressionText {
-      font-size: 1.2em;
+      font-size: 1m;
       margin-right: 0.25rem;
       margin-bottom: 0.25rem;
       font-weight: bolder;
@@ -138,13 +138,14 @@
     }
 
     .universityName {
-      color: #555;
+      font-weight: bolder;
+      font-size: 1.2em;
     }
 
     .buttonGroup {
       display: flex;
       justify-content: center;
-      margin: 1.5rem 0;
+      margin: 1.5rem ;
     }
 
     .button.custom-button {
@@ -178,6 +179,45 @@
 
     .gitHubIcon {
       background-image: url('./static/images/github-icon.png');
+    }
+    
+    /* New styles for the article content */
+    .articleMainBodyContainer {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    
+    .contentContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .contentImg {
+      width: 100%;
+      max-width: 900px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .contentImg img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    
+    .introText {
+      margin-top: 1rem;
+      text-align: justify;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    
+    .bold {
+      font-weight: bold;
     }
   </style>
 </head>
@@ -261,26 +301,20 @@
           </div>
           
           <div class="is-size-5 publication-authors">
-            <span class="author-block">2025 IEEE International Conference on Robotics & Automation</span>
+            <span class="universityName">2025 IEEE International Conference on Robotics & Automation</span>
           </div>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">Under Review</span>
+            <span class="universityName">Under Review</span>
           </div>
 
           <div class="buttonGroup">
-            <button class="button custom-button" onclick="window.open('#')" type="button" disabled>
-              <span class="icon">
-                <i class="fas fa-file-pdf"></i>
-              </span>
-              <span>Paper</span>
-            </button>
             <button class="button custom-button" onclick="window.open('#')" type="button" disabled>
               <span class="icon">
                 <i class="ai ai-arxiv"></i>
               </span>
               <span>arXiv</span>
             </button>
-            <button class="button custom-button" onclick="window.open('https://github.com/maple-zhou/SCP')" type="button">
+            <button class="button custom-button" onclick="window.open('#')" type="button"disabled>
               <span class="icon">
                 <i class="fab fa-github"></i>
               </span>
@@ -293,18 +327,7 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img src="./static/images/overview.png">
-      <h2 class="subtitle has-text-centered" style="text-align: justify;">
-        <p><strong>SCP provides a scalable and customizable approach utilizing LLMs for generating planning-specific corner cases.</strong> </p>
-        <p><em>Top</em>: <strong>SCP-NuPlan</strong> builds upon existing dataset, NuPlan, and modifies vehicle trajectories using global information for scalability.</p>
-        <p><em>Bottom</em>: <strong>SCP-LimSim</strong> is established based on LimSim platform and obtains high-level customization by individual control using natural language.</p>
-      </h2>
-    </div>
-  </div>
-</section>
+
 
 <section class="hero is-light is-small">
   <div class="hero-body">
@@ -359,19 +382,51 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Autonomous driving systems must reliably handle rare and complex scenarios, known as corner cases, to ensure safety in real-world conditions. However, directly collecting corner case data is often costly, time-consuming, and insufficiently scalable. As a result, researchers have turned to synthetic corner case generation methods to address these challenges. Existing methods, particularly for planning tasks, are limited in scalability, customization, and contextual relevance.
+            Autonomous driving systems must reliably handle rare and complex scenarios, known as <strong>corner cases</strong>, to ensure safety in real-world conditions. However, directly collecting corner case data is often costly, time-consuming, and insufficiently scalable. As a result, researchers have turned to corner case generation methods to address these challenges. Existing methods for planning tasks face three fundamental limitations: (1) weak contextual relevance caused by environment-agnostic generation, (2) poor scalability due to manual scenario engineering, and (3) limited customizability from fixed behavioral templates.
           </p>
           <p>
-            We introduce <strong>SCP</strong>, a novel approach that leverages Large Language Models to generate scalable and customizable planning-specific corner cases. With sufficient world knowledge inside LLMs, SCP is data-agnostic and training-free, incorporating intention-driven context by explicit natural language commands.
+            We present <strong>SCP</strong>, a dual-paradigm framework that synergizes global scenario analysis and individual agent control through Large Language Models (LLMs). Our approach enables scalable generation via top-down coordination of agent trajectories, and customizable behaviors through bottom-up natural language directives, with contextual relevance by language-mediated spatial-temporal reasoning. SCP operates in a data-agnostic, training-free manner through two concrete instantiations.
           </p>
           <p>
-            We also present <strong>SCP-NuPlan</strong>, a benchmark that repurposes NuPlan's dataset into a diverse set of challenging corner cases, and <strong>SCP-LimSim</strong>, a flexible simulation tool for creating complex, customized corner cases via natural language descriptions. Our experiments show significant performance degradation in planning algorithms when tested on SCP-NuPlan, and the experiments of SCP-LimSim further demonstrate the customizability of diverse agent behaviors in response to detailed language inputs. We will release SCP-NuPlan and SCP-LimSim soon.
+            One is <strong>SCP-NuPlan</strong> benchmark, with 6,382 challenging scenarios, causing 21.1% performance degradation in state-of-the-art planners. The other is <strong>SCP-LimSim</strong> simulator, enabling real-time behavior customization via natural language interaction. The proposed framework establishes a new paradigm for safety-critical scenario generation, effectively bridging the gap between algorithmic testing requirements and real-world driving challenges. We will release SCP-NuPlan and SCP-LimSim soon.
           </p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+
+<section class="hero teaser is-light">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="articleMainBodyContainer contentContainer">
+        <div class="contentImg contentImg1">
+          <img src="./static/images/overview.png" alt="SCP provides a scalable and customizable approach utilizing LLMs for generating planning-specific corner cases. ">
+          <div class="introText"> 
+            Fig. 1. <span class="bold">SCP provides a scalable and customizable approach utilizing LLMs for generating planning-specific corner cases. </span> 
+            <span class="bold">Top</span>: Through the global LLM agent, we build SCP-NuPlan on the existing dataset, using global information to modify vehicle trajectories for scalability. 
+            <br>
+            <span class="bold">Bottom</span>: Through the individual LLM agent, we build SCP-LimSim on the existing simulator, enabling customization through natural language-based individual control.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/overview.png">
+      <h2 class="subtitle has-text-centered" style="text-align: justify;">
+        <p><strong>SCP provides a scalable and customizable approach utilizing LLMs for generating planning-specific corner cases.</strong> </p>
+        <p><em>Top</em>: <strong>SCP-NuPlan</strong> builds upon existing dataset, NuPlan, and modifies vehicle trajectories using global information for scalability.</p>
+        <p><em>Bottom</em>: <strong>SCP-LimSim</strong> is established based on LimSim platform and obtains high-level customization by individual control using natural language.</p>
+      </h2>
+    </div>
+  </div> -->
+
+
 
 <footer class="footer">
   <div class="container">
