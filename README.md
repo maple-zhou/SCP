@@ -2,7 +2,7 @@
 
 <!-- This is the repository that contains source code for the [HumanSim website](https://humansim.github.io/). -->
 
-This is an academic paper project page of the ICRA 2025 under review paper, "SCP: Scalable and Customizable Generation of Planning-specific Corner Cases in Autonomous Driving".
+This is an academic paper project page of the IROS 2025 under review paper, "SCP: Scalable and Customizable Generation of Planning-specific Corner Cases in Autonomous Driving".
 
 - Project Page: [https://maple-zhou.github.io/SCP/](https://maple-zhou.github.io/SCP/)
 
